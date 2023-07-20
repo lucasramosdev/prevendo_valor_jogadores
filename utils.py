@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 def get_players():
     players = pd.read_csv('players.csv')
-    players = players[['name', 'date_of_birth', 'player_id']]
+    players = players[['name', 'player_id']]
     return players.dropna()
 
 def get_player(name):
@@ -24,7 +24,7 @@ def verify_player_in_base(name):
 
 def get_valuations():
     valuations = pd.read_csv('player_valuations.csv')
-    valuations = valuations[['player_id', 'last_season', 'date', 'market_value_in_eur']]
+    valuations = valuations[['player_id', 'date', 'market_value_in_eur']]
     return valuations.dropna()
 
 def get_stats():
